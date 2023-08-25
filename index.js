@@ -19,14 +19,19 @@ function processData() {
     if (myPerson) {
 
         const person = document.createElement('li');
+        const icon = document.createElement('img');
+        icon.src = myPerson.picture.thumbnail;
+        const textInfo = document.createElement('div');
         const fullName = document.createElement('h4');
         const locationName = document.createElement('p');
 
         fullName.textContent = myPerson.name.first + ' ' + myPerson.name.last;
         locationName.textContent = myPerson.location.street.name + ' ' + myPerson.location.country;
        
-        person.appendChild(fullName);
-        person.appendChild(locationName);
+        textInfo.appendChild(fullName);
+        textInfo.appendChild(locationName);
+        person.appendChild(icon);
+        person.appendChild(textInfo);
 
         listOfPeople.appendChild(person);
 
